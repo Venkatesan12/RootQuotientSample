@@ -22,6 +22,11 @@
                     <h3 class="mb-0">RootQuotient</h3>
                 </div>
                 <div class="card-body">
+                    <div *ngIf="error">
+                        <div class="alert alert-danger">
+                            <strong>{{msg}}</strong>
+                          </div>
+                    </div>
                     <form (ngSubmit)="onSubmit(name.value,password.value)" #getForm="ngForm">
                         <div class="form-group">
                             <label for="name">Github Organisation Name</label>
@@ -36,11 +41,7 @@
                         <button type="submit" [disabled]='getForm.invalid' class="btn btn-success btn-lg float-right" id="btnLogin">Get Details</button>
                     </form>
                 </div>
-            <div *ngIf="error">
-                <div class="alert alert-danger">
-                    <strong>{{msg}}</strong>
-                  </div>
-            </div>
+          
             </div>
         </div>
     </div>
