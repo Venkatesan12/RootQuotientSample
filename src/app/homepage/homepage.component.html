@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -15,7 +16,7 @@
     <div class="row" *ngIf="flag">
         <div class="col-md-3 align-model">
         </div>
-        <div class="col-md-6" style="margin-top: 20px;">
+        <div class="col-md-6" style="margin-top: 50px;margin-left: 20px;">
             <span class="anchor" id="formLogin"></span>
             <img class="welcome" src="/assets/GitHubLogo.png" width="200px" height="115px">
             <div class="welcome"><h3><span class="badge badge-pill badge-dark">Github Info Viewer</span></h3></div>
@@ -62,43 +63,30 @@
       </li>
     </ul>
   </nav>
-    
-      
-  <div class="jumbotron jumbotron-fluid" style="height: 100vh">
-    <div class="container">
-      <h1 class="display-4">Github Info Viewer</h1>
-      <p class="lead">Below are the informations you requested for.</p>
-    </div>
-    
-   
-    <div class="container container-fluid" style="max-width: 1200px;">  
-
-<div style=" padding-left: 150px;font-size: 3ch;margin-bottom: 40px;">   Search For Language : <input type="search" [(ngModel)]="searchtech"></div>
-
+ <div class="row" style="margin-left: 40px;margin-top: 30px;">
+      <div class ="col-md-6"><h1 class="display-4">Github Info Viewer</h1>
+      <p class="lead">Below are the informations requested</p>
+      </div>
+      <div class ="col-md-6" style="margin-top: 30px;"><span style="font-size: 2ch;">Search For Language <input type="search" [(ngModel)]="searchtech"></span>
+</div>
+ </div>
+<hr>
+     <div class="container">
         <div class="row size">
             <div class="col-sm-4"  *ngFor="let item of details | filter:searchtech">
-              <div class="card bg-light mb-3" style="max-width: 18rem">
+              <div class="card bg-light mb-3 .rounder-lg shadow-lg p-2 bg-white rounded" style="max-width: 22rem">
                 <div class="card-header"><h5><b>{{item.name}}</b></h5>
                 </div>
-                <div class = "card-body">{{item.description}}   
+                <div class = "card-body" style="height:100px">{{item.description}}   
                 <span class="badge badge-danger" style="float:right;" *ngIf="item.private==true">Private</span> 
                 <span class="badge badge-success" style="float:right;" *ngIf="item.private==false">Public</span> 
-                </div>
-                <div class="card-footer" style="padding-bottom: 20px;">
-                <div>
-                <span style="float:right;"><h6>{{item.language}}</h6></span>
-                </div>
-                 <br>
-                 <br>
-                 <div>
-                    <span><button class="btn btn-lg btn-outline-primary" (click)="open()">More information</button></span>
-                </div>
-                </div>       
+                </div>  
+                <div class = "card-footer">
+                    <a href="{{item.html_url}}"><button class="btn btn-outline-primary btn-sm">Visit Repository</button></a>
+                </div>   
             </div>
-            </div>
-          </div>
-        </div>
-      
+            </div>     
+            </div> 
 </div>
 </div>
 </body>
