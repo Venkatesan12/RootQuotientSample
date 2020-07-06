@@ -17,9 +17,6 @@ export class OrganisationService {
 
   getDetails(orgname:string,access_token:string):Observable<IOrganisationInfo>
   {
-    {{debugger}}
-    console.log(orgname,access_token);
-    console.log(this.rootURL);
   return this.http.get<IOrganisationInfo>(this.rootURL+orgname+'/repos', { params: new HttpParams().set('access_token', access_token)
   }
   )

@@ -43,9 +43,7 @@
                         </div>
                         <button type="submit" [disabled]='getForm.invalid' class="btn btn-dark btn-lg float-center" id="btnLogin">Get Details</button>
                        <div class="text-muted"> Dont have a access token? Click <a href=" https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Here </a>to generate.</div>
-                    </form>
-               
-          
+                    </form>              
             </div>
             </div>
         </div>
@@ -83,6 +81,7 @@
                 </div>  
                 <div class = "card-footer">
                     <a href="{{item.html_url}}"><button class="btn btn-outline-primary btn-sm">Visit Repository</button></a>
+                    <span class="float-right lang">{{item.language}}</span>
                 </div>   
             </div>
             </div>     
