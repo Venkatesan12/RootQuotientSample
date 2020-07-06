@@ -12,13 +12,15 @@
 </head>
 
 <body>
-    <div class="row" style="margin-top: 50px;" *ngIf="flag">
-        <div class="col-md-6 offset-md-3">
+    <div class="row" *ngIf="flag">
+        <div class="col-md-3 align-model">
+        </div>
+        <div class="col-md-6" style="margin-top: 20px;">
             <span class="anchor" id="formLogin"></span>
-
-            <!-- form card login with validation feedback -->
-            <div class="card card-outline-secondary">
-                <div class="card-header">
+            <img class="welcome" src="/assets/GitHubLogo.png" width="200px" height="115px">
+            <div class="welcome"><h3><span class="badge badge-pill badge-dark">Github Info Viewer</span></h3></div>
+            <div class="card card-outline-secondary .rounder-lg shadow-lg p-3 mb-5 bg-white rounded" style="width: 450px;margin-top: 20px;margin-left: 110px;">
+                <div class="card-header head" >
                     <h3 class="mb-0">RootQuotient</h3>
                 </div>
                 <div class="card-body">
@@ -38,11 +40,16 @@
                             <input type="password" class="form-control" id="password" name ="password" #password ngModel required>
                             <div class="invalid-feedback">Please enter a your Access key</div>
                         </div>
-                        <button type="submit" [disabled]='getForm.invalid' class="btn btn-success btn-lg float-right" id="btnLogin">Get Details</button>
+                        <button type="submit" [disabled]='getForm.invalid' class="btn btn-dark btn-lg float-center" id="btnLogin">Get Details</button>
+                       <div class="text-muted"> Dont have a access token? Click <a href=" https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Here </a>to generate.</div>
                     </form>
-                </div>
+               
           
             </div>
+            </div>
+        </div>
+        <div class="col-md-3 align-model">
+            
         </div>
     </div>
     
