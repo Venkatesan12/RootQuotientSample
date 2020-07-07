@@ -32,6 +32,7 @@ onSubmit(orgname:string,password:string){
   this.pass = password;
   this.OrgService.getDetails(this.org,this.pass).subscribe(result=>{this.details=result as IOrganisationInfo;
     this.flag =  false;
+    console.log(this.details);
   },  
   err => {
     console.log("Error in authentication : " + JSON.stringify(err));

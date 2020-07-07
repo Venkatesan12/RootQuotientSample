@@ -65,13 +65,13 @@
       <div class ="col-md-6"><h1 class="display-4">Github Info Viewer</h1>
       <p class="lead">Below are the informations requested</p>
       </div>
-      <div class ="col-md-6" style="margin-top: 30px;"><span style="font-size: 2ch;">Search For Language <input type="search" [(ngModel)]="searchtech"></span>
+      <div class ="col-md-6" style="margin-top: 30px;"><span style="font-size: 2ch;">Search For Repository <input type="search" [(ngModel)]="searchtech"></span>
 </div>
  </div>
 <hr>
      <div class="container">
         <div class="row size">
-            <div class="col-sm-4"  *ngFor="let item of details | filter:searchtech">
+            <div class="col-sm-4"  *ngFor="let item of details | filter:'name':searchtech">
               <div class="card bg-light mb-3 .rounder-lg shadow-lg p-2 bg-white rounded" style="max-width: 22rem">
                 <div class="card-header"><h5><b>{{item.name}}</b></h5>
                 </div>

@@ -10,12 +10,13 @@ import { IOrganisationInfo } from './Interface/IOrganisationInfo';
 export class FilterPipe implements PipeTransform
 
 {
-    transform(items: IOrganisationInfo[], searchText: string): IOrganisationInfo[] {
+    transform(items: IOrganisationInfo[],prop : string,searchtech: string): IOrganisationInfo[] {
       if(!items) return [];
-      if(!searchText) return items;
-  searchText = searchText.toLowerCase();
-  {
-    return items.filter(user => user.name.indexOf(searchText) == -1);
-     }
+      if(!searchtech) return items;
+      searchtech = searchtech.toLowerCase();
+      console.log(searchtech)
+  return items.filter(it => {
+    return it[prop].toLowerCase().includes(searchtech);
+});
   }
 }
